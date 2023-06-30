@@ -52,7 +52,7 @@ joblib ~= 1.0.1
 jsonpointer ~= 2.3	
 jsonschema ~= 3.2.0	
 jupyter ~= 1.0.0	
-jupyter-client 	
+jupyter-client 	>= 7.4.4
 jupyter-console ~= 6.2.0	
 jupyter-core 	
 jupyter-events ~= 0.6.3	
