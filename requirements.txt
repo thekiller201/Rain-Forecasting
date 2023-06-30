@@ -67,7 +67,7 @@ mistune ~= 0.8.4
 nbclassic ~= 1.0.0	
 nbclient ~= 0.5.2	
 nbconvert 	
-nbformat ~= 5.1.2	
+nbformat 
 nest-asyncio ~= 1.5.1	
 notebook ~= 6.2.0	
 notebook-shim ~= 0.2.3	
