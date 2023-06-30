@@ -75,7 +75,7 @@ numpy
 packaging ~= 20.9	
 pandas ~= 1.4.4	
 pandocfilters ~= 1.4.3	
-parso ~= 0.8.1	
+parso ~= 0.7.0	
 pickleshare ~= 0.7.5	
 pip ~= 22.0.4	
 platformdirs ~= 3.5.1	
