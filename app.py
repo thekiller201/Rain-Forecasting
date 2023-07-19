@@ -7,7 +7,7 @@ import pickle
 
 
 model = pickle.load(open("rain_XGBnew_model.pkl", "rb"))
-app = Flask(__name__, template_folder="../Rain-Forecasting/template")
+app = Flask(__name__, template_folder="../template")
 
 @app.route("/",methods=['GET'])
 
