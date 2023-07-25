@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='after_rainy.css') }}">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: #333333;
+            margin-top: 30px;
+        }
+
+        .sunnyimg {
+            display: flex;
+            justify-content: center;
+            margin: 30px auto;
+            max-width: 550px;
+        }
+
+        .sunnyimg img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .rainy-text {
+            font-style: italic;
+            font-weight: 600;
+            color: #555555;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: #555555;
+            margin-bottom: 30px;
+        }
+    </style>
+    <title>Sunny Day</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>SUNNY DAY</h1>
+        <div class="sunnyimg">
+            
+            <img src="{{url_for('static', filename='sunny.jpg')}}" alt="Sunny Day">
+        </div>
+        <div>
+            <h2><center> Tomorrow is going to be <span style="font-style: italic; font-weight: bolder;">sunny day</span>. <br>Don't forget to put on your sunscreen!</center></h2>
+        </div>
+    </div>
+</body>
+
+</html>
