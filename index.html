@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous" />
+  <link rel="stylesheet" href={{url_for('static',filename='predictor.css' )}}>
+  <title>Rain Prediction</title>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <style>
+    label {
+      color: black;
+    }
+  </style>
+</head>
+
+<body style="background-color: grey">
+
+  <button id="helpButton" class="help-button">
+    <span>&#63;</span>
+  </button>
+
+  <div id="helpSection" class="help-section">
+
+    <button id="exitButton" class="exit-button">
+      <span>&times;</span>
+    </button>
+
+    <div class="help-content">
+      <h2 style="color: red; font-weight: bold;">คำแนะนำ</h2>
+      <p>ควรใส่ข้อมูลให้ครบทุกช่องเพื่อความแม่นยำของการพยากรณ์</p><br>
+
+      <h2>วิธีใช้</h2>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui accusamus fugiat similique tempora voluptate
+        dolorem nostrum sunt. Minus maxime, expedita cum culpa sapiente velit, aliquam voluptas modi vero dolorum
+        impedit.</p><br>
+
+      <h2>ข้อกำหนด</h2>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui accusamus fugiat similique tempora voluptate
+        dolorem nostrum sunt. Minus maxime, expedita cum culpa sapiente velit, aliquam voluptas modi vero dolorum
+        impedit.</p><br>
+      
+    </div>
+  </div>
+
+  </div>
+
+  <section id="prediction-form">
+    <form class="form" action="/predict" , method="POST" id="prediction-form">
+      <h2 class="my-3 text-center" style="color: black">
+        การพัฒนาระบบการพยากรณ์การเกิดฝน
+      </h2>
+      <h5 class="my-3 text-center" style="color: black">
+        ระบบจะทำการพยากรณ์การเกิดฝนของวันพรุ่งนี้
+      </h5>
+      <h5 class="my-3 text-center" style="color: rgb(255, 0, 0)">
+        กรุณากรอกข้อมูลให้ครบถ้วนทุกช่อง (*)
+      </h5>
+      <div class="row">
+        <div class="col-md-6 my-2">
+          <div class="md-form">
+            <label for="raintoday" class="raintoday required" name="raintoday">วันนี้ฝนตกหรือไม่?</label>
+            <select class="raintoday" id="raintoday" name="raintoday" aria-label="Rain Today" required>
+              <option value="">วันนี้ฝนตกหรือไม่?</option>
+              <option value="1">ใช่</option>
+              <option value="0">ไม่</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-md-6 my-2">
+          <div class="md-form">
+            <label for="location" class="location required" name="location">เมืองที่ทำการวัด</label>
+            <select class="location" id="location" name="location" aria-label="Location" required>
+              <option value="">เลือกเมืองที่ทำการวัด</option>
+              <option value="24">Adelaide</option>
+              <option value="7">Albany</option>
+              <option value="30">Albury</option>
+              <option value="46">AliceSprings</option>
+              <option value="33">BadgerysCreek</option>
+              <option value="14">Ballarat</option>
+              <option value="36">Bendigo</option>
+              <option value="21">Brisbane</option>
+              <option value="2">Cairns</option>
+              <option value="43">Cobar</option>
+              <option value="9">CoffsHarbour</option>
+              <option value="4">Dartmoor</option>
+              <option value="11">Darwin</option>
+              <option value="15">GoldCoast</option>
+              <option value="17">Hobart</option>
+              <option value="45">Katherine</option>
+              <option value="23">Launceston</option>
+              <option value="28">Melbourne</option>
+              <option value="25">Melbourne Airport</option>
+              <option value="44">Mildura</option>
+              <option value="42">Moree</option>
+              <option value="5">MountGambier</option>
+              <option value="12">MountGinini</option>
+              <option value="19">Newcastle</option>
+              <option value="47">Nhil</option>
+              <option value="13">NorahHead</option>
+              <option value="6">NorfolkIsland</option>
+              <option value="32">Nuriootpa</option>
+              <option value="40">PearceRAAF</option>
+              <option value="31">Penrith</option>
+              <option value="26">Perth</option>
+              <option value="35">Perth Airport</option>
+              <option value="1">Portland</option>
+              <option value="37">Richmond</option>
+              <option value="27">Sale</option>
+              <option value="41">Salmon Gums</option>
+              <option value="10">Sydney</option>
+              <option value="16">Sydney Airport</option>
+              <option value="39">Townsville</option>
+              <option value="34">Tuggeranong</option>
+              <option value="49">Uluru</option>
+              <option value="38">WaggaWagga</option>
+              <option value="3">Walpole</option>
+              <option value="18">Watsonia</option>
+              <option value="22">William Town</option>
+              <option value="8">Witchcliffe</option>
+              <option value="20">Wollongong</option>
+              <option value="48">Woomera</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-md-6 my-2">
+          <div class="md-form">
+            <label for="date" class="date required">วันที่</label>
+            <input type="date" class="form-control" id="date" name="date" required/>
+          </div>
+        </div>
+        <div class="col-md-6 my-2">
+          <div class="md-form">
+            <label for="mintemp" class="mintemp required">
+              อุณหภูมิต่ำสุด(°C)</label>
+            <input type="number" step="0.01" class="form-control" id="mintemp" name="mintemp"
+              placeholder="-50.00 - 50.00 °C" min="-50" max="50" required />
+          </div>
+        </div>
+        <div class="col-md-6 my-2">
+          <div class="md-form">
+            <label for="maxtemp" class="maxtemp required">อุณหภูมิสูงสุด(°C)</label>
+            <input input type="number" step="0.01" class="form-control" id="maxtemp" name="maxtemp"
+              placeholder="-50.00 - 50.00 °C" min="-50" max="50" required  />
+          </div>
+        </div>
+        <div class="col-md-6 my-2">
+          <div class="md-form">
+            <label for="rainfall" class="rainfall required">ปริมาณน้ำฝน(มิลลิเมตร)</label>
+            <input input type="number" step="0.01" class="form-control" id="rainfall" name="rainfall"
+              placeholder="0 - 50.00 mm" min="0" max="50" required />
+          </div>
+        </div>
+        <div class="col-md-6 my-2">
+          <div class="md-form">
+            <label for="evaporation" class="evaporation required">อัตราการระเหยของน้ำ(มิลลิเมตร)</label>
+            <input input type="number" step="0.01" class="form-control" id="evaporation" name="evaporation"
+              placeholder="0 - 50.00 mm" min="0" max="50" required />
+          </div>
+        </div>
+        <div class="col-md-6 my-2">
+          <div class="md-form">
+            <label for="sunshine" class="sunshine required">แสงอาทิตย์(ชั่วโมง)</label>
+            <input input type="number" step="0.01" class="form-control" id="sunshine" name="sunshine"
+              placeholder="0 - 12.00 hr" min="0" max="12" required />
+          </div>
+        </div>
+        <div class="col-md-6 my-2">
+          <div class="md-form">
+            <label for="windgustspeed" class="windgustspeed required">ความเร็วลมกระโชก(กิเมตรต่อวินาที)</label>
+            <input input type="number" step="0.01" class="form-control" id="windgustspeed" name="windgustspeed"
+              placeholder="0 - 100 km/s" min="0" max="100" required />
+          </div>
+        </div>
+        <div class="col-md-6 my-2">
+          <div class="md-form">
+            <label for="windspeed9am" class="windspeed9am required">ความเร็วลม 9.00 นาฬิกา(กิเมตรต่อวินาที)</label>
+            <input input type="number" step="0.01" class="form-control" id="windspeed9am" name="windspeed9am"
+              placeholder="0 - 100 km/s" min="0" max="100" required />
+          </div>
+        </div>
+        <div class="col-md-6 my-2">
+          <div class="md-form">
+            <label for="windspeed3pm" class="windspeed3pm required">ความเร็วลม 15.00 นาฬิกา(กิเมตรต่อวินาที)</label>
+            <input input type="number" step="0.01" class="form-control" id="windspeed3pm" name="windspeed3pm"
+              placeholder="0 - 100 km/s" min="0" max="100" required />
+          </div>
+        </div>
+        <div class="col-md-6 my-2">
+          <div class="md-form">
+            <label for="humidity9am" class="humidity9am required">ความชื้นสัมพัทธ์ 9.00 นาฬิกา(%RH)</label>
+            <input input type="number" step="0.01" class="form-control" id="humidity9am" name="humidity9am"
+              placeholder="0 - 100 %RH" min="0" max="100" required />
+          </div>
+        </div>
+        <div class="col-md-6 my-2">
+          <div class="md-form">
+            <label for="humidity3pm" class="humidity3pm required">ความชื้นสัมพัทธ์ 15.00 นาฬิกา(%RH)</label>
+            <input input type="number" step="0.01" class="form-control" id="humidity3pm" name="humidity3pm"
+              placeholder="0 - 100 %RH" min="0" max="100" required />
+          </div>
+        </div>
+        <div class="col-md-6 my-2">
+          <div class="md-form">
+            <label for="pressure9am" class="pressure9am required">ความกดอากาศ 9.00 นาฬิกา(hPa)</label>
+            <input input type="number" step="0.01" class="form-control" id="pressure9am" name="pressure9am"
+              placeholder="980.00 - 1030.00 hPa" min="980" max="1030" required />
+          </div>
+        </div>
+        <div class="col-md-6 my-2">
+          <div class="md-form">
+            <label for="pressure3pm" class="pressure3pm required">ความกดอากาศ 15.00 นาฬิกา(hPa)</label>
+            <input input type="number" step="0.01" class="form-control" id="pressure3pm" name="pressure3pm"
+              placeholder="980.00 - 1030.00 hPa" min="980" max="1030" required />
+          </div>
+        </div>
+
+        <div class="col-md-6 my-2">
+          <div class="md-form">
+            <label for="temp9am" class="temp9am required">อุณหภูมิ 9.00 นาฬิกา(°C)</label>
+            <input input type="number" step="0.01" class="form-control" id="temp9am" name="temp9am"
+              placeholder="-50.00 - 50.00 °C" min="-50" max="50" required />
+          </div>
+        </div>
+        <div class="col-md-6 my-2">
+          <div class="md-form">
+            <label for="temp3pm" class="temp3pm required">อุณหภูมิ 15.00 นาฬิกา(°C)</label>
+            <input input type="number" step="0.01" class="form-control" id="temp3pm" name="temp3pm"
+              placeholder="-50.00 - 50.00 °C" min="-50" max="50" required />
+          </div>
+        </div>
+        <div class="col-md-6 my-2">
+          <div class="md-form">
+            <label for="cloud9am" class="cloud9am required">ปริมาณเมฆ 9.00 นาฬิกา</label>
+            <input input type="number" step="0.01" class="form-control" id="cloud9am" name="cloud9am"
+              placeholder="0 - 10" min="0" max="10" required />
+          </div>
+        </div>
+        <div class="col-md-6 my-2">
+          <div class="md-form">
+            <label for="cloud3pm" class="cloud3pm required">ปริมาณเมฆ 15.00 นาฬิกา</label>
+            <input input type="number" step="0.01" class="form-control" id="cloud3pm" name="cloud3pm"
+              placeholder="0 - 10" min="0" max="10" required />
+          </div>
+        </div>
+
+        <div class="col-md-6 my-2">
+          <div class="md-form">
+            <label for="winddir9am" class="winddir9am required" name="winddir9am">ทิศทางลม 9.00 นาฬิกา</label>
+            <select class="winddir9am" id="winddir9am" name="winddir9am" aria-label="Wind Direction 9am" required>
+              <option value="">เลือกทิศทางลม 9.00 นาฬิกา</option>
+              <option value="1">N</option>
+              <option value="5">W</option>
+              <option value="10">S</option>
+              <option value="15">E</option>
+              <option value="2">NW</option>
+              <option value="9">NE</option>
+              <option value="7">SW</option>
+              <option value="13">SE</option>
+              <option value="0">NNW</option>
+              <option value="3">NNE</option>
+              <option value="8">SSW</option>
+              <option value="11">SSE</option>
+              <option value="4">WNW</option>
+              <option value="6">WSW</option>
+              <option value="12">ENE</option>
+              <option value="14">ESE</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-md-6 my-2">
+          <div class="md-form">
+            <label for="winddir3pm" class="winddir3pm required" name="winddir3pm">ทิศทางลม 15.00 นาฬิกา</label>
+            <select class="winddir3pm" id="winddir3pm" name="winddir3pm" aria-label="Wind Direction at 3pm" required>
+              <option value="">เลือกทิศทางลม 15.00 นาฬิกา</option>
+              <option value="2">N</option>
+              <option value="4">W</option>
+              <option value="8">S</option>
+              <option value="14">E</option>
+              <option value="0">NW</option>
+              <option value="11">NE</option>
+              <option value="9">SW</option>
+              <option value="10">SE</option>
+              <option value="1">NNW</option>
+              <option value="5">NNE</option>
+              <option value="7">SSW</option>
+              <option value="12">SSE</option>
+              <option value="3">WNW</option>
+              <option value="6">WSW</option>
+              <option value="13">ENE</option>
+              <option value="15">ESE</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-md-6 my-2">
+          <div class="md-form">
+            <label for="windgustdir" class="windgustdir required" name="windgustdir">ทิศทางลมกระโชก</label>
+            <select class="windgustdir" id="windgustdir" name="windgustdir" aria-label="Wind Gust Direction" required>
+              <option value="">เลือกทิศทางลมกระโชก</option>
+              <option value="3">N</option>
+              <option value="4">W</option>
+              <option value="7">S</option>
+              <option value="15">E</option>
+              <option value="1">NW</option>
+              <option value="11">NE</option>
+              <option value="9">SW</option>
+              <option value="12">SE</option>
+              <option value="0">NNW</option>
+              <option value="6">NNE</option>
+              <option value="8">SSW</option>
+              <option value="10">SSE</option>
+              <option value="2">WNW</option>
+              <option value="5">WSW</option>
+              <option value="14">ENE</option>
+              <option value="13">ESE</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="col-md-6 my-2 d-flex align-items-end justify-content-around">
+          <button type="submit" class="btn btn-info button" style="margin-left: 100%" onclick="validateForm()">
+            Predict
+          </button>
+        </div>
+      </div>
+    </form>
+  </section>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+    crossorigin="anonymous"></script>
+  <script>
+    // JavaScript to toggle the help section and adjust z-index on button click
+    document.addEventListener("DOMContentLoaded", function () {
+      const helpButton = document.getElementById("helpButton");
+      const helpSection = document.getElementById("helpSection");
+      const exitButton = document.getElementById("exitButton");
+
+      helpButton.addEventListener("click", function () {
+        // Toggle the help section by adjusting the 'right' property
+        if (parseInt(getComputedStyle(helpSection).right) >= 0) {
+          helpSection.style.right = "-300px";
+          helpSection.style.zIndex = -1; // Move the help section behind
+        } else {
+          helpSection.style.right = "0";
+          helpSection.style.zIndex = 3; // Bring the help section to the front
+        }
+      });
+
+      exitButton.addEventListener("click", function () {
+        // Close the help section when the exit button is clicked
+        helpSection.style.right = "-300px";
+        helpSection.style.zIndex = -1; // Move the help section behind
+      });
+    });
+
+  </script>
+  <h5 class="my-3 text-center" style="color: white">
+    Predicted by : XGB Classifier Model
+  </h5>
+</body>
+
+</html>

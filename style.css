@@ -1,0 +1,185 @@
+
+body, h1, h2, h3, h4, h5, h6, p, ul, li {
+  margin: 0;
+  padding: 0;
+}
+
+/* Apply a custom font */
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Style the background */
+body {
+  background-color: #f0f0f0;
+}
+
+/* Style the prediction form container */
+#prediction-form {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Style headings */
+h2, h5 {
+  color: #333; 
+}
+
+/* Style labels and select boxes */
+label, select {
+  color: #333;
+}
+
+/* Style form inputs */
+input[type="number"], input[type="date"], select {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #ccc; 
+  border-radius: 5px;
+}
+
+/* Style the Predict button */
+.button {
+  background-color: #ffc400; /* Blue */
+  color: #fff; /* White text */
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Style dropdowns to match the input style */
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23333'%3E%3Cpath d='M7 10l5 5 5-5H7z'/%3E%3C/svg%3E") no-repeat right center;
+  background-size: 20px;
+}
+
+/* Increase the height of the date input */
+input[type="date"] {
+  height: 46px; 
+}
+
+
+
+/* Add hover effect to the button */
+.button:hover {
+  background-color: #ffaa00; 
+}
+
+/* Center align the button */
+.button {
+  display: block;
+  margin: 0 auto;
+}
+
+/* Add spacing below the button */
+.button + h5 {
+  margin-top: 20px;
+}
+
+label.required:after {
+  content: ' *';
+  color: red;
+}
+
+/* Style for the help button */
+.help-button {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Style for the help section */
+.help-section {
+  position: fixed;
+  top: 0;
+  right: -300px; /* Initially hidden off-screen */
+  width: 300px;
+  height: 100%;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  transition: right 0.3s;
+
+  overflow-y: auto; /* Enable vertical scrolling if needed */
+}
+
+
+
+/* Style for the exit button */
+.exit-button {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: transparent;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #605f5f; /* Blue color for the "X" icon */
+  transition: color 0.3s;
+  z-index: 2; /* Ensure the exit button is on top */
+}
+
+.exit-button:hover {
+  color: rgb(12, 12, 12); /* Red color on hover */
+}
+
+/* Style for the help content */
+.help-content {
+  position: absolute;
+  top: 50px; /* Adjust the top position as needed */
+  left: 10px;
+  right: 10px; /* Allow some spacing on the right */
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 1; /* Ensure the content is behind the exit button */
+}
+
+/* Style for the input fields */
+.form-control {
+  /* Add your input field styles here */
+  width: 100%; /* Make the input fields full width */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  z-index: 1; /* Ensure the input fields are behind the help content */
+}
+
+
+
+
+
+
+
+/* Responsive design: Adjust form columns on smaller screens */
+@media (max-width: 768px) {
+  .col-md-6 {
+      flex-basis: 100%;
+      max-width: 100%;
+  }
+}
+
+/* Responsive design: Adjust form padding and font size on smaller screens */
+@media (max-width: 480px) {
+  #prediction-form {
+      padding: 10px;
+  }
+  input[type="number"], input[type="date"], select {
+      font-size: 14px;
+  }
+}
