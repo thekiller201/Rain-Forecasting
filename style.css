@@ -43,7 +43,7 @@ input[type="number"], input[type="date"], select {
 
 /* Style the Predict button */
 .button {
-  background-color: #ffc400; /* Blue */
+  background-color: #007bff; /* Blue */
   color: #fff; /* White text */
   border: none;
   padding: 10px 20px;
@@ -69,7 +69,8 @@ input[type="date"] {
 
 /* Add hover effect to the button */
 .button:hover {
-  background-color: #ffaa00; 
+  background-color: #0056b3; 
+  color: #fff;
 }
 
 /* Center align the button */
@@ -88,67 +89,6 @@ label.required:after {
   color: red;
 }
 
-/* Style for the help button */
-.help-button {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  background-color: #007BFF;
-  color: #fff;
-  border: none;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  font-size: 24px;
-  cursor: pointer;
-}
-
-/* Style for the help section */
-.help-section {
-  position: fixed;
-  top: 0;
-  right: -300px; /* Initially hidden off-screen */
-  width: 300px;
-  height: 100%;
-  background-color: #fff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  transition: right 0.3s;
-
-  overflow-y: auto; /* Enable vertical scrolling if needed */
-}
-
-
-
-/* Style for the exit button */
-.exit-button {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  background-color: transparent;
-  border: none;
-  font-size: 24px;
-  cursor: pointer;
-  color: #605f5f; /* Blue color for the "X" icon */
-  transition: color 0.3s;
-  z-index: 2; /* Ensure the exit button is on top */
-}
-
-.exit-button:hover {
-  color: rgb(12, 12, 12); /* Red color on hover */
-}
-
-/* Style for the help content */
-.help-content {
-  position: absolute;
-  top: 50px; /* Adjust the top position as needed */
-  left: 10px;
-  right: 10px; /* Allow some spacing on the right */
-  background-color: #fff;
-  padding: 20px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  z-index: 1; /* Ensure the content is behind the exit button */
-}
-
 /* Style for the input fields */
 .form-control {
   /* Add your input field styles here */
@@ -160,7 +100,25 @@ label.required:after {
   z-index: 1; /* Ensure the input fields are behind the help content */
 }
 
+/* Help Section */
+/* Style for the Help button */
+#help-button {
+  position: absolute;
+  top: 20px; /* Adjust the top spacing as needed */
+  right: 20px; /* Adjust the right spacing as needed */
+  background-color: #007bff; /* Button background color */
+  color: #fff; /* Button text color */
+  font-size: 18px; /* Button text size */
+  border: none; /* Remove button border */
+  padding: 10px 20px; /* Button padding */
+  cursor: pointer; /* Show hand cursor on hover */
+  border-radius: 5px; /* Add rounded corners */
+}
 
+/* Style for button hover effect */
+#help-button:hover {
+  background-color: #0056b3; /* Darker color on hover */
+}
 
 
 
